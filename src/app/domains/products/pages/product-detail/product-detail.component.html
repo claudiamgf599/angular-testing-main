@@ -7,6 +7,7 @@
       <div class="w-full rounded border border-gray-200">
         <div class="relative h-96">
           <img
+            data-testid="cover"
             alt="ecommerce"
             [fill]="true"
             class="w-full object-cover object-center"
@@ -14,7 +15,7 @@
         </div>
       </div>
       <div class="flex items-center justify-center mt-1">
-        <div class="grid grid-cols-3 gap-1">
+        <div data-testid="gallery" class="grid grid-cols-3 gap-1">
           @for (img of data.images; track img) {
             <img
               width="80"
@@ -45,6 +46,7 @@
         {{ data.price | currency: '$' : 'symbol' : '1.0' }}
       </p>
       <button
+        data-testid="add-to-cart"
         (click)="addToCart()"
         class="flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
         Add To Cart
